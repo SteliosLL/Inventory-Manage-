@@ -1,0 +1,37 @@
+H:\stuff\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.csproj.AssemblyReference.cache
+H:\stuff\Inventory Manage\Inventory Manage\obj\Debug\Inventory_Manage.Form1.resources
+H:\stuff\Inventory Manage\Inventory Manage\obj\Debug\Inventory_Manage.Properties.Resources.resources
+H:\stuff\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.csproj.GenerateResource.cache
+H:\stuff\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.csproj.CoreCompileInputs.cache
+H:\stuff\Inventory Manage\Inventory Manage\bin\Debug\Inventory Manage.exe.config
+H:\stuff\Inventory Manage\Inventory Manage\bin\Debug\Inventory Manage.exe
+H:\stuff\Inventory Manage\Inventory Manage\bin\Debug\Inventory Manage.pdb
+H:\stuff\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.exe
+H:\stuff\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.pdb
+H:\stuff\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.dll
+H:\stuff\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll
+H:\stuff\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.Sensors.dll
+H:\stuff\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+H:\stuff\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+H:\stuff\Inventory Manage\Inventory Manage\obj\Debug\Inventor.CE2214C9.Up2Date
+H:\stuff\Inventory Manage\Inventory Manage\obj\Debug\Inventory_Manage.addItemFrm.resources
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\bin\Debug\Inventory Manage.exe.config
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\bin\Debug\Inventory Manage.exe
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\bin\Debug\Inventory Manage.pdb
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.Sensors.dll
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.csproj.AssemblyReference.cache
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory_Manage.addItemFrm.resources
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory_Manage.Form1.resources
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory_Manage.Properties.Resources.resources
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.csproj.GenerateResource.cache
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.csproj.CoreCompileInputs.cache
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.csproj.CopyComplete
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.exe
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory Manage.pdb
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory_Manage.newFilterForm.resources
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory_Manage.aboutFrm.resources
+C:\Users\Stelios L PC\Desktop\Inventory Manage\Inventory Manage\obj\Debug\Inventory_Manage.moreItemInfoForm.resources
