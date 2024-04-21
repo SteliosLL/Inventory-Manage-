@@ -143,13 +143,17 @@ namespace Inventory_Manage
             if (filterFrm.ShowDialog() == DialogResult.OK)
             {
                 Tuple<string, Color> categ = new Tuple<string, Color>(filterFrm.nameTxtBox.Text, filterFrm.colorPnl.BackColor);
-                mainFrm.categories[mainFrm.selectedTabIndex].Add(categ);
-                mainFrm.categories[mainFrm.selectedTabIndex].Sort();
-                Debug.WriteLine("-------------");
                 foreach (Tuple<string, Color> tuple in mainFrm.categories[mainFrm.selectedTabIndex])
                 {
-                    Debug.WriteLine(tuple.Item1);
+                    if (tuple.Item1 == categ.Item1)
+                    {
+                        MessageBox.Show("A category with the same name already exists!", "Create new category error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
                 }
+                mainFrm.categories[mainFrm.selectedTabIndex].Add(categ);
+                mainFrm.categories[mainFrm.selectedTabIndex].Sort();
+                Debug.WriteLine("-------------");             
                 createDropDown(selectCategoryBtn, mainFrm.categories[mainFrm.selectedTabIndex]);
                 selectCategoryBtn.Text = categ.Item1;
                 selectCategoryBtn.BackColor = categ.Item2;
@@ -214,6 +218,14 @@ namespace Inventory_Manage
             if (filterFrm.ShowDialog() == DialogResult.OK)
             {
                 Tuple<string, Color> categ = new Tuple<string, Color>(filterFrm.nameTxtBox.Text, filterFrm.colorPnl.BackColor);
+                foreach (Tuple<string, Color> tuple in mainFrm.storedAt[mainFrm.selectedTabIndex])
+                {
+                    if (tuple.Item1 == categ.Item1)
+                    {
+                        MessageBox.Show("A store location with the same name already exists!", "Create new store location error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
                 mainFrm.storedAt[mainFrm.selectedTabIndex].Add(categ);
                 mainFrm.storedAt[mainFrm.selectedTabIndex].Sort();
                 createDropDown(selectStoredAtBtn, mainFrm.storedAt[mainFrm.selectedTabIndex]);
@@ -280,7 +292,18 @@ namespace Inventory_Manage
         private void button2_Click(object sender, EventArgs e)
         {
             toolTip1.SetToolTip(infoBtn, "NOTE: You don't need to click OK and create an item in order to\r\ncreate new categories and store locations");
+        }
 
+        int normalWidth = 390;
+        private void categoryToolStrip_SizeChanged(object sender, EventArgs e)
+        {
+            int widest = Math.Max(categoryToolStrip.Width, storedAtMenuStrip.Width);
+            if (widest > 296)
+            {
+                this.Width = normalWidth + widest - 296;
+            }
+            else { this.Width = normalWidth;  }
+            //this.Refresh();
         }
     }
 }

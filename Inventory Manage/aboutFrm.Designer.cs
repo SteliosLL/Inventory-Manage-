@@ -55,6 +55,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Location = new System.Drawing.Point(220, 252);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -97,6 +98,7 @@
             // 
             // moreOptionsBtn
             // 
+            this.moreOptionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.moreOptionsBtn.Location = new System.Drawing.Point(9, 161);
             this.moreOptionsBtn.Name = "moreOptionsBtn";
             this.moreOptionsBtn.Size = new System.Drawing.Size(75, 23);
@@ -108,9 +110,10 @@
             // classicNormalRadioBtn
             // 
             this.classicNormalRadioBtn.AutoSize = true;
+            this.classicNormalRadioBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.classicNormalRadioBtn.Location = new System.Drawing.Point(6, 37);
             this.classicNormalRadioBtn.Name = "classicNormalRadioBtn";
-            this.classicNormalRadioBtn.Size = new System.Drawing.Size(100, 17);
+            this.classicNormalRadioBtn.Size = new System.Drawing.Size(106, 18);
             this.classicNormalRadioBtn.TabIndex = 7;
             this.classicNormalRadioBtn.TabStop = true;
             this.classicNormalRadioBtn.Text = "Classic + Nomal";
@@ -120,9 +123,10 @@
             // normalRadioBtn
             // 
             this.normalRadioBtn.AutoSize = true;
+            this.normalRadioBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.normalRadioBtn.Location = new System.Drawing.Point(6, 14);
             this.normalRadioBtn.Name = "normalRadioBtn";
-            this.normalRadioBtn.Size = new System.Drawing.Size(126, 17);
+            this.normalRadioBtn.Size = new System.Drawing.Size(132, 18);
             this.normalRadioBtn.TabIndex = 8;
             this.normalRadioBtn.TabStop = true;
             this.normalRadioBtn.Text = "Normal windows style";
@@ -144,9 +148,10 @@
             // fullClassicRadioBtn
             // 
             this.fullClassicRadioBtn.AutoSize = true;
+            this.fullClassicRadioBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.fullClassicRadioBtn.Location = new System.Drawing.Point(6, 60);
             this.fullClassicRadioBtn.Name = "fullClassicRadioBtn";
-            this.fullClassicRadioBtn.Size = new System.Drawing.Size(76, 17);
+            this.fullClassicRadioBtn.Size = new System.Drawing.Size(82, 18);
             this.fullClassicRadioBtn.TabIndex = 9;
             this.fullClassicRadioBtn.TabStop = true;
             this.fullClassicRadioBtn.Text = "Full classic";

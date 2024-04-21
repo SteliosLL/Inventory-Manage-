@@ -42,9 +42,9 @@ namespace Inventory_Manage
             //   tabControl1.Appearance = TabAppearance.Buttons;
             //  tabControl2.Appearance = TabAppearance.Buttons;
         }
-    
+
         //holds general info/settings about the program.
-       public List<object> data = new List<object>();
+        public List<object> data = new List<object>();
         //categories, store locations etc for each tab
         public List<List<Tuple<string, Color>>> categories = new List<List<Tuple<string, Color>>>();
         public List<List<Tuple<string, Color>>> storedAt = new List<List<Tuple<string, Color>>>();
@@ -71,6 +71,10 @@ namespace Inventory_Manage
                     }
                     catch { }
                 }
+            }
+            if (tabControl1.TabPages.Count <= 0)
+            {
+                newToolStripMenuItem.PerformClick();
             }
         }
         private void Form1_Shown(object sender, EventArgs e)
@@ -179,9 +183,13 @@ namespace Inventory_Manage
                 addItemForm.removeCategoryBtn.Enabled = true;
                 addItemForm.selectCategoryBtn.Text = currentListView.SelectedItems[0].SubItems[2].Text;
             }
-            if (currentListView.SelectedItems[0].SubItems[2].BackColor != SystemColors.Window)//FIX THIS
+            if (currentListView.SelectedItems[0].SubItems[2].BackColor != SystemColors.Window)
             {
                 addItemForm.selectCategoryBtn.BackColor = currentListView.SelectedItems[0].SubItems[2].BackColor;
+            }
+            else if (currentListView.SelectedItems[0].SubItems[2].Text.Trim() != "")
+            {
+                addItemForm.selectCategoryBtn.BackColor = SystemColors.Window;
             }
             if (currentListView.SelectedItems[0].SubItems[3].Text.Trim() != "")
             {
@@ -193,6 +201,10 @@ namespace Inventory_Manage
             {
                 addItemForm.selectStoredAtBtn.BackColor = currentListView.SelectedItems[0].SubItems[3].BackColor;
             }
+            else if (currentListView.SelectedItems[0].SubItems[3].Text.Trim() != "")
+            {
+                addItemForm.selectStoredAtBtn.BackColor = SystemColors.Window;
+            }
             addItemForm.ShowDialog();
             if (addItemForm.DialogResult == DialogResult.OK)
             {
@@ -200,7 +212,11 @@ namespace Inventory_Manage
                 ListViewItem it = makeItem(addItemForm);
                 addtoInv(it);
                 reloadListView(true);
-                currentListView.Items[currentListView.Items.IndexOf(it)].Selected = true;
+                try
+                {
+                    currentListView.Items[currentListView.Items.IndexOf(it)].Selected = true;
+                }
+                catch { }
                 currentListView.Select();
             }
         }
@@ -208,16 +224,26 @@ namespace Inventory_Manage
         {
             if (MessageBox.Show("Are you sure?", "Delete item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                items[selectedTabIndex].Remove(currentListView.SelectedItems[0]);
-                int deletedItemIndex = currentListView.SelectedItems[0].Index;
+                int deletedItemIndex = 0;
+                int i = 0;
+                foreach (ListViewItem item in currentListView.SelectedItems)
+                {
+                    i++;
+                    deletedItemIndex = item.Index;
+                    items[selectedTabIndex].Remove(item);
+                }
                 inventoryModified[selectedTabIndex] = true;
                 reloadListView(true);
-                try
+                if (i == 1)
                 {
-                    currentListView.Items[deletedItemIndex].Selected = true;
-                    currentListView.Select();
+                    try
+                    {
+                        currentListView.Items[deletedItemIndex].Selected = true;
+                        currentListView.Select();
+                    }
+                    catch { }
                 }
-                catch { }
+
             }
         }
 
@@ -261,12 +287,12 @@ namespace Inventory_Manage
                 currentListView.Columns[3].Width = size - 36 - 30;
             }
             catch { }
-            
+
         }
         private void createTab(string tabTitle, bool autoSelect = true)
         {
             ListView lst = new ListView();
-            lst.MultiSelect = false;
+            lst.MultiSelect = true;
             lst.GridLines = true;
             lst.FullRowSelect = true;
             lst.View = View.Details;
@@ -281,7 +307,7 @@ namespace Inventory_Manage
                 moreItemInfoForm moreFrm = new moreItemInfoForm(this);
                 moreFrm.namtxtbox.Text = currentListView.SelectedItems[0].Text;
                 moreFrm.Text = "More info about item: " + currentListView.SelectedItems[0].Text;
-                moreFrm.listView1.Items.Add(currentListView.SelectedItems[0].Clone() as ListViewItem);
+                moreFrm.qtyListView.Items.Add(currentListView.SelectedItems[0].Clone() as ListViewItem);//its added to the other listviews automatically
                 moreFrm.notesTxtBox.Text = currentListView.SelectedItems[0].SubItems[4].Text;
                 moreFrm.Show();
             };

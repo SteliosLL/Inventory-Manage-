@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using static Microsoft.WindowsAPICodePack.Shell.PropertySystem.SystemProperties.System;
 
 namespace Inventory_Manage
 {
@@ -34,12 +28,50 @@ namespace Inventory_Manage
         {
             notesTxtBox.BackColor = SystemColors.Window;
             this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(mainFrm.Location.X + mainFrm.Width /2 - this.Width/2, mainFrm.Location.Y + mainFrm.Height/ 2 - this.Height / 2);
-       }
+            this.Location = new Point(mainFrm.Location.X + mainFrm.Width / 2 - this.Width / 2, mainFrm.Location.Y + mainFrm.Height / 2 - this.Height / 2);
+            categListView.Items.Add(qtyListView.Items[0].Clone() as ListViewItem);
+            storedAtListView.Items.Add(qtyListView.Items[0].Clone() as ListViewItem);
+        }
 
-        private void notesTxtBox_TextChanged(object sender, EventArgs e)
+
+        private void categListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
+            if (e.ColumnIndex != 2) e.Cancel = true;
 
         }
+
+
+        private void storedAtListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            if (e.ColumnIndex != 3) e.Cancel = true;
+        }
+        private void qtyListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            if (e.ColumnIndex != 1) e.Cancel = true;
+        }
+        private void categListView_ColumnWidthChanged_1(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (e.ColumnIndex != 2 && categListView.Columns[e.ColumnIndex].Width != 0)
+            {
+                categListView.Columns[e.ColumnIndex].Width = 0;
+            }
+        }
+
+        private void storedAtListView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (e.ColumnIndex != 3 && storedAtListView.Columns[e.ColumnIndex].Width != 0)
+            {
+                storedAtListView.Columns[e.ColumnIndex].Width = 0;
+            }
+        }
+
+        private void qtyListView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (e.ColumnIndex != 1 && qtyListView.Columns[e.ColumnIndex].Width != 0)
+            {
+                qtyListView.Columns[e.ColumnIndex].Width = 0;
+            }
+        }
+
     }
 }
